@@ -1,0 +1,14 @@
+
+/* MODAL LOGIN */
+#modal{
+	width: 95%;
+}
+#modalBody{
+	height: 40em;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+#formLogin{
+	
+}
