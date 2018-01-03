@@ -5,11 +5,39 @@
 	 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>GO IN-WORK</title>
+	<!-- FIREBASE -->
+	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
+		<!-- Modal LOGIN-->
+	<div id="modalLogin" class="modal fade bs-example-modal-lg" role="dialog">
+	    <div class="modal-dialog modal-lg" id="modal">
+		    <div class="modal-content" >
+		        <div class="modal-body" id="modalBody">
+					<div class="row">
+						<div class="col-lg-12">
+							<form id="formLogin">
+						        <div class="form-group">
+						            <label for="email" class="control-label">Correo:</label>
+						            <input type="email" class="form-control" id="email">
+						        </div>
+						        <div class="form-group">
+						            <label for="password" class="control-label">Contraseña:</label>
+						            <input type="password" class="form-control" id="password">
+						        </div>
+						        <button type="button" class="btn btn-default" data-dismiss="modal" id="logIn">Log In</button>
+						        <button type="button" class="btn btn-default" data-dismiss="modal" id="signUp">Sign Up</button>
+						        <button type="button" class="btn btn-default" data-dismiss="modal" id="logOut">Log Out</button>
+			       			 </form>
+						</div>
+					</div>
+		        </div>
+		    </div>
+	    </div>
+	</div>
 	<header class="usuario">
 		<div class="row">
 			<div class="col-md-4"> <!-- foto de perfil -->
@@ -36,37 +64,135 @@
 	<section class="cont-chat">
 		<div class="row">
 			<div class="col-md-3"><!--cont-chat-->
-				
+				<div id="menuVertical">
+                    <ul id="sidebar" class="nav nav-pills nav-stacked">
+                        <!-- <li  class="page-header menuLi" id="search"><input type="text" class="form-control" placeholder="Buscar o empezar un chat nuevo"></i></li> -->
+                        <li class="menuLi page-header" id="perfiluno">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-1"></td>
+                                        <td> <label for="nameNav" id="namePerfil_1" class="labelName">Laboratoria Peru</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_1" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="menuLi page-header" id="perfildos">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-2"></td>
+                                        <td> <label for="nameNav" id="namePerfil_2" class="labelName">Raymi Saldomando</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_2" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="menuLi page-header" id="perfiltres">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-"></td>
+                                        <td> <label for="nameNav" id="namePerfil_3" class="labelName">Mariana Costa</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_3" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="menuLi page-header" id="perfilcuatro">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-4"></td>
+                                        <td> <label for="nameNav" id="namePerfil_4" class="labelName">Ana Maria Martinez Franklin</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_4" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="menuLi page-header" id="perfilcinco">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-5"></td>
+                                        <td> <label for="nameNav" id="namePerfil_5" class="labelName">Rodulfo Prieto</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_5" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="menuLi page-header" id="perfilseis">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-6"></td>
+                                        <td> <label for="nameNav" id="namePerfil_6" class="labelName">Andrea Lamas</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_6" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="menuLi page-header" id="perfilsiete">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-7"></td>
+                                        <td> <label for="nameNav" id="namePerfil_7" class="labelName">Maria Paula Rivarola</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_7" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="menuLi page-header" id="perfilocho">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-8"></td>
+                                        <td> <label for="nameNav" id="namePerfil_8" class="labelName">Kathy Sanchez</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_8" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                        <li class="menuLi page-header" id="perfilnueve">
+                            <a href="#">
+                                <table>
+                                    <tr>
+                                        <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-9"></td>
+                                        <td> <label for="nameNav" id="namePerfil_9" class="labelName">Aldo Alfaro</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="actionNav" id="msmPerfil_9" class="labelMsm"></label></td>
+                                    </tr>
+                                </table>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 			</div> <!--col-cont-chat-->
 			<div class="col-md-9">
 				
 			</div><!-- col 9 -->
 		</div><!--row-->
 	</section><!-- cont-chat -->
-<!-- Modal LOGIN-->
-<div id="modalLogin" class="modal fade bs-example-modal-lg" role="dialog">
-    <div class="modal-dialog modal-lg" id="modal">
-	    <div class="modal-content" >
-	        <div class="modal-body" id="modalBody">
-				<div class="row">
-					<div class="col-lg-12">
-						<form id="formLogin">
-					        <div class="form-group">
-					            <label for="email" class="control-label">Correo:</label>
-					            <input type="email" class="form-control" id="email">
-					        </div>
-					        <div class="form-group">
-					            <label for="password" class="control-label">Contraseña:</label>
-					            <input type="password" class="form-control" id="password">
-					        </div>
-					        <button type="button" class="btn btn-default" data-dismiss="modal">Iniciar sesión</button>
-		       			 </form>
-					</div>
-				</div>
-	        </div>
-	    </div>
-    </div>
-</div>
+
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   	crossorigin="anonymous"></script>

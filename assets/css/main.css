@@ -14,3 +14,31 @@
 body {
 	background-color: #f7cd38;
 }
+/* Nav vertical */
+#menuVertical{
+    display: inline-block;
+    /* width: 20em; */
+    margin-top: -1em;
+    height: 40em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#sidebar {
+    display: inline-block;
+    width: 100%;
+}
+
+#sidebar.nav > li > a,
+#sidebar.nav > li > a:link {
+    border-radius: 5px;
+    color: #000;
+    height: 100%;
+}
+
+#search input{
+    width: 100%;
+}
+img{
+    border-radius:50%;
+    width: 4em;
+}

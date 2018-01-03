@@ -1,0 +1,21 @@
+[debug] [2018-01-03T01:29:29.830Z] ----------------------------------------------------------------------
+[debug] [2018-01-03T01:29:29.838Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Evelyn\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase init
+[debug] [2018-01-03T01:29:29.840Z] CLI Version:   3.16.0
+[debug] [2018-01-03T01:29:29.840Z] Platform:      win32
+[debug] [2018-01-03T01:29:29.840Z] Node Version:  v6.11.5
+[debug] [2018-01-03T01:29:29.843Z] Time:          Tue Jan 02 2018 22:29:29 GMT-0300 (Hora verano Sudamérica Pacífico)
+[debug] [2018-01-03T01:29:29.843Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-03T01:29:29.883Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase"]
+[debug] [2018-01-03T01:29:29.884Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Evelyn\Desktop\LABORATORIA\3.Crea tu propia red social\Unidad 5 Crea tu propia red social\GoInWork
+
