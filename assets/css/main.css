@@ -1,6 +1,5 @@
 /* MODAL LOGIN */
 body {
- /
     font-family: 'Carme', sans-serif;
     background: -webkit-linear-gradient(#800000, #FA5858); /* For Safari 5.1 to 6.0 */
 
@@ -18,14 +17,9 @@ body {
     margin-right:auto;;
     background-color: 
 }
-.logotipo{
-
-}
 .cicle a{
     text-decoration: none;
 }
-
-
 #modal{
 	width: 95%;
 }
@@ -34,19 +28,17 @@ body {
 	display: flex;
   	justify-content: center;
   	align-items: center;
+  	background-color: #000;
 }
-#formLogin{
-}
-
-
 /* Nav vertical */
 #menuVertical{
     display: inline-block;
-    /* width: 20em; */
+   width: 20em;
     margin-top: -1em;
     height: 40em;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding: 5px;
 }
 #sidebar {
     display: inline-block;
@@ -63,19 +55,9 @@ body {
 #search input{
     width: 100%;
 }
-img{
+.logo{
     border-radius:50%;
     width: 4em;
-}
-.close{
-   ;
-}
-
-.thumbnail{
-
-}
-.iconos{
-
 }
 .usuarioPhoto{
     border-radius:10%;
@@ -111,7 +93,6 @@ img{
     background-color: rgba(0,0,0,0.2);
     border:none;
     color:white;
-
     
 }
 #noticias{
@@ -165,6 +146,6 @@ img{
     background-color: #FFBF00;
 }
 
-} 
 
-/*
+
+

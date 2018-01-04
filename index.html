@@ -25,6 +25,7 @@
 		        <div class="modal-body" id="modalBody">
 					<div class="row">
 						<div class="col-lg-12">
+							<img src="assets/img/logotipo-GO.png" alt="">
 							<form id="formLogin">
 						        <div class="form-group">
 						            <label for="email" class="control-label">Correo:</label>
@@ -34,9 +35,9 @@
 						            <label for="password" class="control-label">Contraseña:</label>
 						            <input type="password" class="form-control" id="password">
 						        </div>
-						        <button type="button" class="btn btn-default" data-dismiss="modal" id="logIn">Log In</button>
-						        <button type="button" class="btn btn-default" data-dismiss="modal" id="signUp">Sign Up</button>
-						        <button type="button" class="btn btn-default" data-dismiss="modal" id="logOut">Log Out</button>
+						        <button type="button" class="btn btn-default " data-dismiss="modal" id="logIn">Log In</button>
+						        <button type="button" class="btn btn-default " data-dismiss="modal" id="signUp" >Sign Up</button>
+						        <button type="button" class="btn btn-default hide" data-dismiss="modal" id="logOut">Log Out</button>
 			       			 </form>
 						</div>
 					</div>
@@ -103,9 +104,9 @@
 
 	<section class="cont-chat degradadoCont">
 		<div class="row">
-			<div class="col-md-3"><!--cont-chat-->
-				<div id="menuVertical">
-                    <ul id="sidebar" class="nav nav-pills nav-stacked">
+			<div class="col-md-3" id="chatContactos"><!--cont-chat-->
+				<div id='menuVertical'>
+				    <ul id="sidebar" class="nav nav-pills nav-stacked">
                         <!-- <li  class="page-header menuLi" id="search"><input type="text" class="form-control" placeholder="Buscar o empezar un chat nuevo"></i></li> -->
                         <li class="menuLi page-header" id="perfiluno">
                             <a href="#">
@@ -225,10 +226,14 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+				</div>
 			</div> <!--col-cont-chat-->
 			<div class="col-md-9">
-				
+				<form action="" id="form-images">
+					<label for="" class="btn btn-file"></label>
+					<input type="file" name="fichero" value="" id="fichero">
+					<!-- <img src="assets/img/fileUpload.png" class="img-responsive imgFile" alt="img"> -->
+				</form>
 			</div><!-- col 9 -->
 		</div><!--row-->
 	</section><!-- cont-chat -->
