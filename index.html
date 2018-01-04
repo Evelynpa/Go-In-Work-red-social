@@ -9,10 +9,16 @@
 	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet">
+   <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
+ 
+
 </head>
 <body>
+
 		<!-- Modal LOGIN-->
+
 	<div id="modalLogin" class="modal fade bs-example-modal-lg" role="dialog">
 	    <div class="modal-dialog modal-lg" id="modal">
 		    <div class="modal-content" >
@@ -37,31 +43,65 @@
 		        </div>
 		    </div>
 	    </div>
-	</div>
-	<header class="usuario">
-		<div class="row">
-			<div class="col-md-4"> <!-- foto de perfil -->
-			</div><!-- col-md-4 foto de perfil-->
-				<div class="col-md-8"><!-- usuario info -->
-						<div class="row">
-							<div class="col-md-12"><!-- usuario-estado-->
-							</div><!-- col-md-12 usuario-estado -->
-						</div>	<!-- row -->
-						<div class="row">
-							<div class="col-md-12"><!-- usuario-noticias -->
-							</div><!-- col-md-12 usuario-noticias -->
-						</div>	<!-- row -->
-						<div class="row">
-							<div class="col-md-12"><!-- usuario-iconos-->
-							</div><!-- col-md-12 usuario-iconos -->
-						</div>	<!-- row usuario-iconos-->
-				</div><!-- col-md-8 usuario info -->
-			
+	</div><nav class="navbar navbar-inverse">
+  ...
+
+ 
+  <nav class="navbar navbar-default"  id="navClose">
+    <div class="container-fluid"  id="navClose">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <img alt="Brand" src="...">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+	<header class="usuario" id="degradado">
+    <div class="row">
+			<div class="col-md-2"> <!-- foto de perfil -->
+         <td rowspan="3"><img class="usuarioPhoto" src="assets/img/perfil.jpg" alt="logo" class="logo" id="userPhoto"></td>  
+			</div><!-- col-md-2 foto de perfil-->
+			<div class="col-md-8"><!-- usuario info -->
+				<div class="row">
+					<div class="col-md-12"><!-- usuario-estado-->
+            <label for="nameNav" id="estado" class="UserEstado">Patito     Amarillo
+            </label>
+            <select class="form-control"  id="estadosUser">
+              <option>Disponible</option>
+              <option>Ocupado</option>
+              <option>Ausente</option> 
+            </select>
+					</div><!-- col-md-12 usuario-estado -->
+				</div>	<!-- row -->
+				<div class="row">
+					<div class="col-md-12"><!-- usuario-noticias -->
+            <button type="button" class="btn btn-primary" data-toggle="modal"          data-target="#exampleModal" id="buttonNoticia">
+              Crea una nueva noticia
+            </button>
+          </div><!-- col-md-12 usuario-noticias -->
+				</div>	<!-- row -->
+        <div class="row">
+          <div class="col-md-12" ><!-- usuario-iconos-->
+            <div class="ico">
+              <div class="cicle"><i class="fa fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="cicle"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> 
+              </div> 
+              <div class="cicle"> <i class="fa fa-user-plus" aria-hidden="true"></i> 
+              </div> 
+              <div class="cicle"> <i class="fa fa-linkedin" aria-hidden="true"></i> 
+              </div> 
+              <div class="cicle"> <i class="fa fa-users" aria-hidden="true"></i> 
+              </div> 
+            </div>  
+          </div><!-- col-md-12 usuario-iconos -->
+        </div>  <!-- row usuario-iconos-->
+  		</div><!-- col-md-8 usuario info -->	
 		</div><!-- row-usuario -->	
-	</header><!-- usuario -->
+  </header><!-- usuario -->
 
-
-	<section class="cont-chat">
+	<section class="cont-chat degradadoCont">
 		<div class="row">
 			<div class="col-md-3"><!--cont-chat-->
 				<div id="menuVertical">
