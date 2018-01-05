@@ -1,8 +1,9 @@
+/*
 window.onload = function() {
   $('#modalLogin').modal({show: true, backdrop: 'static', keyboard: false});
 };
 
- 	const txtemail = document.getElementById('email');
+	const txtemail = document.getElementById('email');
 	  const txtcontraseña = document.getElementById('password');
 	  const btnlogin = document.getElementById('logIn');
 	  const btnsignup = document.getElementById('signUp');
@@ -25,12 +26,12 @@ window.onload = function() {
 (function(){
 	 // Initialize Firebase
 	  var config = {
-	    apiKey: "AIzaSyBNo16Sb_f7GXDGtPCamNSURa0vVr2Hzmo",
-	    authDomain: "go-in-work.firebaseapp.com",
-	    databaseURL: "https://go-in-work.firebaseio.com",
-	    projectId: "go-in-work",
-	    storageBucket: "go-in-work.appspot.com",
-	    messagingSenderId: "518892409142"
+		apiKey: "AIzaSyBNo16Sb_f7GXDGtPCamNSURa0vVr2Hzmo",
+		authDomain: "go-in-work.firebaseapp.com",
+		databaseURL: "https://go-in-work.firebaseio.com",
+		projectId: "go-in-work",
+		storageBucket: "go-in-work.appspot.com",
+		messagingSenderId: "518892409142"
 	  };
 	  firebase.initializeApp(config);
 
@@ -38,42 +39,42 @@ window.onload = function() {
 	  var userconect = null;
 
 		  btnlogin.addEventListener('click', e =>{
-		  	//obtener email y password
-		  	const email = txtemail.value;
-		  	const pass = txtcontraseña.value;
-		  	const auth = firebase.auth();
-		  	//entrar
+			//obtener email y password
+			const email = txtemail.value;
+			const pass = txtcontraseña.value;
+			const auth = firebase.auth();
+			//entrar
 			const promise = auth.signInWithEmailAndPassword(email, pass);
 			promise.catch( e => console.log(e.message));//detecta si existe error
-		 	  	
-		  	
+				
+			
 		  });
 
 		  btnsignup.addEventListener('click', e =>{
 		  //crear email y password
-		  	const email = txtemail.value;
-		  	const pass = txtcontraseña.value;
-		  	const auth = firebase.auth();
+			const email = txtemail.value;
+			const pass = txtcontraseña.value;
+			const auth = firebase.auth();
 			//entrar
 			const promise = auth.createUserWithEmailAndPassword(email, pass);
 			
-		  	promise.catch( e => console.log(e.message));//mensaje en caso de 'No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado.'	  	
+			promise.catch( e => console.log(e.message));//mensaje en caso de 'No hay registro de usuario correspondiente a este identificador. El usuario puede haber sido eliminado.'	  	
 		  });
 
-		  	btnlogout.addEventListener('click', e => {
-		  		firebase.auth().signUp();
-		  	});
+			btnlogout.addEventListener('click', e => {
+				firebase.auth().signUp();
+			});
 
-		  	//logear en tiempo real
-		  	firebase.auth().onAuthStateChanged(firebaseUser =>{
-		  		if(firebaseUser){
+			//logear en tiempo real
+			firebase.auth().onAuthStateChanged(firebaseUser =>{
+				if(firebaseUser){
 					const email = txtemail.value;
-				  	const pass = txtcontraseña.value;
+					const pass = txtcontraseña.value;
 
 					addNewContact();
-		  			console.log(firebaseUser);
-		  			/*btnlogout.removeClass('hide');*/
-		  			var formatoFecha = new Date();
+					console.log(firebaseUser);
+					/*btnlogout.removeClass('hide');*/
+/*					var formatoFecha = new Date();
 					var d =formatoFecha.getUTCDate();
 					var m =formatoFecha.getMonth()+1;
 					var y =formatoFecha.getFullYear();
@@ -83,14 +84,14 @@ window.onload = function() {
 					var fecha = d+"/"+m+"/"+y+" "+h+":"+min;
 
 
-		  			userconect = database.ref('/user');
-		  			addUserToBD(firebaseUser.uid, firebaseUser.email, fecha);
+					userconect = database.ref('/user');
+					addUserToBD(firebaseUser.uid, firebaseUser.email, fecha);
 
-		  		}else {
-		  			console.log('no se ha logeado');
-		  			btnlogout.classList.add('hide');
-		  		}
-		  	})
+				}else {
+					console.log('no se ha logeado');
+					btnlogout.classList.add('hide');
+				}
+			})
 
 			function addUserToBD(uid, name, fecha){		
 					var conect = userconect.push({
@@ -113,23 +114,34 @@ window.onload = function() {
 			}
 })();
 
+/*
+function colors(){
+	var disponible = document.getElementById('mySelect').value; 
+	document.getElementById('userPhoto').style.border = '5px solid red'; 
+};
+
+
+	
+
+
+
 /*$(document).ready(function() {
 
 	$("#imagen").on("change", function() {
-    if(typeof(FileReader) != undefined){
-      var preview = $("#preview");
-      preview.empty();
+	if(typeof(FileReader) != undefined){
+	  var preview = $("#preview");
+	  preview.empty();
 
-      var reader = new FileReader();
-        reader.onload = function(e){
-          $("#preview").attr("src", e.target.result);
-        }
+	  var reader = new FileReader();
+		reader.onload = function(e){
+		  $("#preview").attr("src", e.target.result);
+		}
 
-      reader.readAsDataURL($(this)[0].files[0]);
+	  reader.readAsDataURL($(this)[0].files[0]);
  
-    }else{
-      console.log("Formato desconocido");
-    }
-    
+	}else{
+	  console.log("Formato desconocido");
+	}
+	
   });
   });*/
