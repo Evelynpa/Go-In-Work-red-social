@@ -9,112 +9,134 @@
 	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet">
-   <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+  	<link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet">
+   	<link rel="stylesheet" type="text/css" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
- 
-
-</head>
+ </head>
 <body>
 
 		<!-- Modal LOGIN-->
-
-	<div id="modalLogin" class="modal fade bs-example-modal-lg" role="dialog">
-	    <div class="modal-dialog modal-lg" id="modal">
-		    <div class="modal-content" >
-		        <div class="modal-body" id="modalBody">
-					<div class="row">
-						<div class="col-lg-12">
-							<img src="assets/img/logotipo-GO.png" alt="">
-							<form id="formLogin">
-						        <div class="form-group">
-						            <label for="email" class="control-label">Correo:</label>
-						            <input type="email" class="form-control" id="email">
-						        </div>
-						        <div class="form-group">
-						            <label for="password" class="control-label">Contraseña:</label>
-						            <input type="password" class="form-control" id="password">
-						        </div>
-						        <button type="button" class="btn btn-default " data-dismiss="modal" id="logIn">Log In</button>
-						        <button type="button" class="btn btn-default " data-dismiss="modal" id="signUp" >Sign Up</button>
-						        <button type="button" class="btn btn-default hide" data-dismiss="modal" id="logOut">Log Out</button>
-			       			 </form>
-						</div>
+<div id="modalLogin" class="modal fade bs-example-modal-lg" role="dialog">
+    <div class="modal-dialog modal-lg" id="modal">
+	    <div class="modal-content" >
+	        <div class="modal-body" id="modalBody">
+				<div class="row">
+					<div class="col-lg-12">
+						<img src="assets/img/logogo.png" alt="" class="img-responsive">
+						<form id="formLogin">
+					        <div class="form-group">
+					            <label for="email" class="control-label">Correo:</label>
+					            <input type="email" class="form-control" id="email">
+					        </div>
+					        <div class="form-group">
+					            <label for="password" class="control-label">Contraseña:</label>
+					            <input type="password" class="form-control" id="password">
+					        </div>
+					        <button type="button" class="btn btn-default " data-dismiss="modal" id="logIn">Log In</button>
+					        <button type="button" class="btn btn-default " data-dismiss="modal" id="signUp" >Sign Up</button>
+					        <button type="button" class="btn btn-default hide" data-dismiss="modal" id="logOut">Log Out</button>
+		       			 </form>
 					</div>
-		        </div>
-		    </div>
+				</div>
+	        </div>
 	    </div>
 	</div>
- 
+ </div>
  <!-- navegador cerrar sessión -->
   <div class="nav" id="navClose">
     <div class="row">
       <div class="col-md-2 col-md-offset-1 logotipo">
         <img class="imgLogotipo"src="assets/img/logoti.png" alt="  ">
       </div>
-      <div class="col-md-4 col-md-offset-10">
-       
-      </div>
     </div>
   </div>
 
   <!--aqui va botones y actualizacion del usuario-->
 	<header class="usuario" id="degradado">
-    <div class="row">
+    	<div class="row">
 			<div class="col-md-2"> <!-- foto de perfil -->
-         <td rowspan="3"><img class="usuarioPhoto" src="assets/img/perfil.jpg" alt="logo" class="logo" id="userPhoto"></td>  
+       		 	<img class="usuarioPhoto" src="assets/img/perfil.jpg" alt="logo" class="logo img-responsive" id="userPhoto"> 
 			</div><!-- col-md-2 foto de perfil-->
 			<div class="col-md-8"><!-- usuario info -->
 				<div class="row">
 					<div class="col-md-12"><!-- usuario-estado-->
-            <label for="nameNav" id="estado" class="UserEstado">Patito     Amarillo
-            </label>
-            <select class="form-control"  id="mySelect" onchange=" colors()">
-              <option id="disponible">Disponible</option>
-              <option id="ocupado">Ocupado</option>
-              <option id="ausente">Ausente</option> 
-            </select>
+		            	<label for="nameNav" id="estado" class="UserEstado">Patito  Amarillo</label>
+			            <select class="form-control"  id="mySelect" onchange="colors()">
+			              <option id="Disponible">Disponible</option>
+			              <option id="Ocupado">Ocupado</option>
+			              <option id="Ausente">Ausente</option> 
+			            </select>
 					</div><!-- col-md-12 usuario-estado -->
 				</div>	<!-- row -->
 				<div class="row">
 					<div class="col-md-12"><!-- usuario-noticias -->
-            <button type="button" class="btn btn-primary" data-toggle="modal"          data-target="#exampleModal" id="buttonNoticia">
-              Crea una nueva noticia
-            </button>
-          </div><!-- col-md-12 usuario-noticias -->
+		            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="buttonNoticia">
+		              Crea una nueva noticia </button>
+		          </div><!-- col-md-12 usuario-noticias -->
 				</div>	<!-- row -->
-        <div class="row">
-          <div class="col-md-12" ><!-- usuario-iconos-->
-            <div class="ico">
-              <div class="cicle"><a href=""><i class="fa fa-envelope" aria-hidden="true"></i></a>
-              </div>
-              <div class="cicle"><a href=""> <i class="fa fa-calendar-check-o" aria-hidden="true"></i></a> 
-              </div> 
-              <div class="cicle"><a href=""><i class="fa fa-user-plus" aria-hidden="true"></i></a>  
-              </div> 
-              <div class="cicle"><a href=""><i class="fa fa-video-camera" aria-hidden="true"></i></a>  
-              </div> 
-              <div class="cicle"><a href=""><i class="fa fa-users" aria-hidden="true"></i></a>  
-              </div> 
-            </div>  
-          </div><!-- col-md-12 usuario-iconos -->
-        </div>  <!-- row usuario-iconos-->
-  		</div><!-- col-md-8 usuario info -->	
+		        <div class="row">
+		          <div class="col-md-12" ><!-- usuario-iconos-->
+		            <div class="ico">
+		              <div class="cicle">
+		              	<i class="fa fa-envelope" aria-hidden="true"></i></a>
+		              </div>
+		              <div class="cicle"> 
+		              	<i class="fa fa-calendar-check-o" aria-hidden="true"></i></a> 
+		              </div> 
+		              <div class="cicle">
+		              	<i class="fa fa-user-plus" aria-hidden="true"></i></a>  
+		              </div> 
+		              <div class="cicle">
+		              	<i class="fa fa-video-camera" aria-hidden="true"></i></a>  
+		              </div> 
+		              <div class="cicle">
+		              	<i class="fa fa-users" aria-hidden="true"></i></a>  
+		              </div> 
+		            </div>  
+		          </div><!-- col-md-12 usuario-iconos -->
+		        </div>  <!-- row usuario-iconos-->
+		  		</div><!-- col-md-8 usuario info -->	
 		</div><!-- row-usuario -->	
+	<!-- MODAL NOTICIAS -->
+	<!-- Modal -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		        <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal">&times;</button>
+			        <h4 class="modal-title">Noticias</h4>
+		        </div>
+		      <div class="modal-body">
+		        <p>
+		        	
+		        </p>
+		      </div>
+		      <div class="modal-footer">	
+		      	<form action="" id="form-images">
+					<input type="file" name="fichero" value="" id="fichero" class="btn-primary">
+		      		<input type="text" id="txtNotices" placeholder="Escribe aquí alguna noticia..." class="form-control">
+		      		<button type="button" class="btn btn-default" data-dismiss="modal" id="publishNews">Enviar</button>
+		      	</form>
+		      </div>
+		    </div>
+
+		</div>
+	</div>
   </header><!-- usuario -->
   <!-- aqui los las noticias y chat -->
 	<section class="cont-chat degradadoCont">
 		<div class="row">
-			<div class="col-md-3" id="chatContactos"><!--cont-chat-->
+			<div class="col-md-3 hidden-xs-down" id="chatContactos"><!--cont-chat-->
 				<div id='menuVertical'>
 				    <ul id="sidebar" class="nav nav-pills nav-stacked">
                         <!-- <li  class="page-header menuLi" id="search"><input type="text" class="form-control" placeholder="Buscar o empezar un chat nuevo"></i></li> -->
-                        <li class="menuLi page-header" id="perfiluno">
+                        <li class="menuLi page-header" id="perfiluno" data-toggle="modal" data-target="#modalChat">
                             <a href="#">
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-1"></td>
-                                        <td> <label for="nameNav" id="namePerfil_1" class="labelName">Laboratoria Peru</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_1" class="labelName">Maria José Barriga</label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_1" class="labelMsm"></label></td>
@@ -122,12 +144,12 @@
                                 </table>
                             </a>
                         </li>
-                        <li class="menuLi page-header" id="perfildos">
+                        <li class="menuLi page-header" id="perfildos" data-toggle="modal" data-target="#modalChatTwo">
                             <a href="#">
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-2"></td>
-                                        <td> <label for="nameNav" id="namePerfil_2" class="labelName">Raymi Saldomando</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_2" class="labelName">Evelyn Parra Rojas</label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_2" class="labelMsm"></label></td>
@@ -140,7 +162,7 @@
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-"></td>
-                                        <td> <label for="nameNav" id="namePerfil_3" class="labelName">Mariana Costa</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_3" class="labelName">Juan Perez</label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_3" class="labelMsm"></label></td>
@@ -153,7 +175,7 @@
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-4"></td>
-                                        <td> <label for="nameNav" id="namePerfil_4" class="labelName">Ana Maria Martinez Franklin</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_4" class="labelName">Angélica Ordenes</label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_4" class="labelMsm"></label></td>
@@ -166,7 +188,7 @@
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-5"></td>
-                                        <td> <label for="nameNav" id="namePerfil_5" class="labelName">Rodulfo Prieto</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_5" class="labelName">Pabla Bazan</label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_5" class="labelMsm"></label></td>
@@ -179,7 +201,7 @@
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-6"></td>
-                                        <td> <label for="nameNav" id="namePerfil_6" class="labelName">Andrea Lamas</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_6" class="labelName">Anlmendra Oyarzun</label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_6" class="labelMsm"></label></td>
@@ -192,7 +214,7 @@
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-7"></td>
-                                        <td> <label for="nameNav" id="namePerfil_7" class="labelName">Maria Paula Rivarola</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_7" class="labelName">Dubrazssca </label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_7" class="labelMsm"></label></td>
@@ -205,7 +227,7 @@
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-8"></td>
-                                        <td> <label for="nameNav" id="namePerfil_8" class="labelName">Kathy Sanchez</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_8" class="labelName">Karen Aedo</label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_8" class="labelMsm"></label></td>
@@ -218,7 +240,7 @@
                                 <table>
                                     <tr>
                                         <td rowspan="3"><img src="assets/img/descarga.jpg" alt="logo" class="logo" id="perfil-9"></td>
-                                        <td> <label for="nameNav" id="namePerfil_9" class="labelName">Aldo Alfaro</label></td>
+                                        <td> <label for="nameNav" id="namePerfil_9" class="labelName">Alexandra</label></td>
                                     </tr>
                                     <tr>
                                         <td><label for="actionNav" id="msmPerfil_9" class="labelMsm"></label></td>
@@ -229,43 +251,53 @@
                     </ul>
 				</div>
 			</div> <!--col-cont-chat-->
-
-			<div class="col-md-9">
-				<form action="" id="form-images">
-					<label for="" class="btn btn-file"></label>
-					<input type="file" name="fichero" value="" id="fichero">
-					<!-- <img src="assets/img/fileUpload.png" class="img-responsive imgFile" alt="img"> -->
-				</form>
+			<div class="col-md-9" id="muro">
+				
 			</div><!-- col 9 -->
 		</div><!--row-->
 	</section><!-- cont-chat -->
-  
-<div class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+  				<!-- Modal -->
+		<div id="modalChat" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
 
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Maria Jose Barriga</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div id="textOne" class="fondo"></div>
+		      </div>
+		      <div class="modal-footer">
+		        <input type="text" id="txtMessage" placeholder="Envia un mensaje aquí..." class="form-control">
+		        <button type="button" class="btn btn-primary"  id="sendMessage">Enviar</button>
+		      </div>
+		    </div>
 
+		  </div>
+		</div>
+		<!-- Modal -->
+		<div id="modalChatTwo" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
 
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Evelyn Parra</h4>
+		      </div>
+		      <div class="modal-body">
+		        <div id="textTwo" class="fondo"></div>
+		      </div>
+		      <div class="modal-footer">
+		      	<input type="text" id="txtMessageTwo" placeholder="Envia un mensaje aquí..." class="form-control">
+		        <button type="button" class="btn btn-primary"  id="sendMessageTwo">Enviar</button>
+		      </div>
+		    </div>
 
-
-
-	
+		  </div>
+		</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   	crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
