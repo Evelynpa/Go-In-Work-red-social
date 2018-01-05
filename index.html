@@ -45,8 +45,8 @@
  <!-- navegador cerrar sessión -->
   <div class="nav" id="navClose">
     <div class="row">
-      <div class="col-md-2 col-md-offset-1 logotipo">
-        <img class="imgLogotipo"src="assets/img/logoti.png" alt="  ">
+      <div class="col-md-2 col-md-offset-1 logotipo hidden-xs-down">
+        <img class="imgLogotipo" src="assets/img/logoti.png" alt="logi">
       </div>
     </div>
   </div>
@@ -54,14 +54,14 @@
   <!--aqui va botones y actualizacion del usuario-->
 	<header class="usuario" id="degradado">
     	<div class="row">
-			<div class="col-md-2"> <!-- foto de perfil -->
+			<div class="col-md-2 "> <!-- foto de perfil -->
        		 	<img class="usuarioPhoto" src="assets/img/perfil.jpg" alt="logo" class="logo img-responsive" id="userPhoto"> 
 			</div><!-- col-md-2 foto de perfil-->
 			<div class="col-md-8"><!-- usuario info -->
 				<div class="row">
 					<div class="col-md-12"><!-- usuario-estado-->
 		            	<label for="nameNav" id="estado" class="UserEstado">Patito  Amarillo</label>
-			            <select class="form-control"  id="mySelect" onchange="colors()">
+			            <select class="form-control"  id="mySelect" onclick="colors()">
 			              <option id="Disponible">Disponible</option>
 			              <option id="Ocupado">Ocupado</option>
 			              <option id="Ausente">Ausente</option> 
